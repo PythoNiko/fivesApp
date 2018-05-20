@@ -1,0 +1,23 @@
+{% extends "fives/base.html" %}
+
+{% block body %}
+    <h1>Chat</h1>
+    <p>Use this area to chat with other users.</p>
+
+    <p>Please visit: <a>https://www.xmpp.jp/signup</a> to create your own Jabber ID.</p>
+
+    <p>This will be used to login and allow you to chat with other users.</p>
+
+    <div id="chatArea">
+        <script>
+        converse.initialize({
+            bosh_service_url: 'https://conversejs.org/http-bind/',
+            show_controlbox_by_default: true
+            // allow_chat_pending_contacts: true, //allows chat with pending contacts
+            // animate: false // default: true - Shows animations (may be slower)
+            // websocket_url: "http://127.0.0.1:8000/chat/chat/" // specify a websocket URI to which converse.js can connect to
+        });
+        </script>
+    </div>
+
+{% endblock %}

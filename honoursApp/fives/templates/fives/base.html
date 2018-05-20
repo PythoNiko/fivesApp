@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Fives</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'fives/style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap/min/js"></script>
+    <!-- CONVERSE.JS CDN's -->
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+    <script src="https://cdn.conversejs.org/dist/converse.min.js"></script>
+</head>
+
+<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <!-- Toggles topNavBar element via BootStrap to work
+                with media queries to adjust for different screen sizes -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'fives:index' %}">Five-a-Side</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class=""> <!-- "ACTIVE" -->
+                    <a href="{% url 'fives:findapitch' %}">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp; Find a Pitch
+                    </a>
+                </li>
+                <li class="">
+                    <a href="{% url 'chat:chat' %}">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp; Chat
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="query" value="">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href='###'>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; My Account
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#####">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+
+</html>
